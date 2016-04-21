@@ -233,15 +233,10 @@
     <Content Include="Models\Entities.edmx.diagram">
       <DependentUpon>Entities.edmx</DependentUpon>
     </Content>
-    <Content Include="Content\js\vendor\modernizr-2.6.2.js" />
-    <Content Include="Content\js\vendor\respond.js" />
     <Content Include="Content\js\vendor\angular.js" />
     <Content Include="Content\names.txt" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Content\js\vendor\modernizr-2.8.3.js" />
+    <Content Include="Content\js\vendor\respond.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -268,7 +263,9 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\TestCatalogApp - Web Deploy.pubxml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

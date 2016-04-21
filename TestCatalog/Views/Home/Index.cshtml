@@ -21,7 +21,7 @@
                         <input type="text" class="form-control" value="{{user.fio}}" style="margin-left: 10px; margin-right: 5px"/>
                     </td>
                     <td style="width: 33%">
-                        <select ng-selectpicker ng-model="user.countryID"  class="form-control" type="text"></select>
+                        <select ng-selectpicker class="form-control" type="text"></select>
                     </td>
                     <td style="width: 33%">
                         <input ng-phone type="text" class="form-control" value="{{user.phone}}"/>
@@ -31,7 +31,13 @@
                 </tbody>
             </table>
             <div class="panel-footer">
-                
+                <ul class="pagination pagination-sm" style="margin: 0">
+                    <li ng-repeat="page in pages">
+                        <a ng-click="getUsers(page)">
+                            {{page}}
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
