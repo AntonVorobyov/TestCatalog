@@ -25,6 +25,15 @@
                         });
                 }
 
+                $scope.saveUser = function (user) {
+                    console.log("save user", user);
+                    userService
+                        .updateUser(user.id, user)
+                        .success(function(response) {
+                            console.log(response);
+                        });
+                };
+
                 $scope.getUsers();
             }
         ]);

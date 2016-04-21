@@ -46,6 +46,39 @@ namespace TestCatalog.Controllers
             return Ok(user);
         }
 
+        [HttpPost]
+        [Route("{id}")]
+        public async Task<IHttpActionResult> UpdateUser(int id, [FromBody]User model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            try
+            {
+                var user = await _context.Users.FirstOrDefaultAsync(u => u.ID == id);
+                if (user == null)
+                    return NotFound();
+
+                if (user.FIO != model.FIO)
+                    user.FIO = model.FIO;
+
+                if (user.CountryID != model.CountryID)
+                    user.CountryID = model.CountryID;
+
+                if (user.Phone != model.Phone)
+                    user.Phone = model.Phone;
+
+                _context.Entry(user).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return Ok(user);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.ToString());
+            }
+        }
+
         [HttpGet]
         [Route("~/api/phones/generate")]
         public IHttpActionResult GeneratePhones()

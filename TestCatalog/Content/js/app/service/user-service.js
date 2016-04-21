@@ -12,6 +12,10 @@
 
                     user: function(id) {
                         return $http.get("/api/users/" + id);
+                    },
+
+                    updateUser: function(id, model) {
+                        return $http.post("/api/users/" + id, model);
                     }
                 };
             }
